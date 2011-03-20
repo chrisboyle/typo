@@ -1,0 +1,6 @@
+[submodule "themes/ghosts_high_noon"]
+	path = themes/ghosts_high_noon
+	url = git://github.com/chrisboyle/ghosts_high_noon.git
+[submodule "vendor/plugins/typo_gands"]
+	path = vendor/plugins/typo_gands
+	url = git://github.com/chrisboyle/typo_gands.git
