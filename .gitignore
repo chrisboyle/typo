@@ -1,5 +1,7 @@
 config/database.yml
+config/deploy.rb
 config/mail.yml
+config/initializers/secret_token.rb
 *.log
 *~
 db/*.sqlite*
