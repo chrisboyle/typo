@@ -11,7 +11,7 @@
   <% for redirect in @redirects %>
   <tr <%= alternate_class %>>
     <td>
-      <%= "#{this_blog.base_url}/#{redirect.from_path}" %>
+      <%= "#{(this_blog.base_url=='http://cambridge.gands.org.uk') ? 'http://gands.org.uk' : this_blog.base_url}/#{redirect.from_path}" %>
       <%= show_redirect_actions redirect %>
     </td>
     <td><%= redirect.to_path %></td>

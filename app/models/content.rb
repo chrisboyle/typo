@@ -321,6 +321,9 @@ class Content < ActiveRecord::Base
   def short_url
     # Double check because of crappy data in my own old database
     return unless self.published and self.redirects.count > 0
+    if blog.base_url == 'http://cambridge.gands.org.uk'  # HACK
+      return 'http://gands.org.uk'+blog.url_for(redirects.first.from_path, :only_path=>true)
+    end
     blog.url_for(redirects.first.from_path, :only_path => false)
   end
 
