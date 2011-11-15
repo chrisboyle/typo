@@ -6,7 +6,7 @@ class Article < Content
   include TypoGuid
   include ConfigManager
   extend ActiveSupport::Memoizable
-  serialize :settings, Hash
+  #serialize :settings, Hash
 
   content_fields :body, :extended
 
@@ -58,7 +58,10 @@ class Article < Content
   scope :published, lambda { { :conditions => { :published => true, :published_at => Time.at(0)..Time.now }, :order => 'published_at DESC' } }
   scope :published_at, lambda {|time_params| { :conditions => { :published => true, :published_at => Article.time_delta(*time_params) }, :order => 'published_at DESC' } }
 
-  setting :password,                   :string, ''
+#  setting :password,                   :string, ''
+  def password
+     return nil
+  end
 
   def initialize(*args)
     super
